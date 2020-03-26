@@ -53,6 +53,25 @@ public class LinkedList {
         }
     }
 
+    public void delete(int element) {
+        Node current = get(element);
+
+        Node nodeToDeletesPrevious = current.getPrevious();
+        Node nodeToDeletesNext = current.getNext();
+
+        if (nodeToDeletesPrevious != null) {
+            nodeToDeletesPrevious.setNext(nodeToDeletesNext);
+        } else {
+            head = nodeToDeletesNext;
+        }
+
+        if (nodeToDeletesNext != null) {
+            nodeToDeletesNext.setPrevious(nodeToDeletesPrevious);
+        } else {
+            tail = nodeToDeletesPrevious;
+        }
+    }
+
     private void insert(Node nextToNewNode, Node newNode) {
 
         Node previousToNewNode;

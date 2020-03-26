@@ -10,13 +10,13 @@ public class Main {
         list.add(1);
         list.add(4);
 
-//        System.out.println(list);
-
         Node find = list.get(1);
 //        System.out.println(find);
 
-        list.insertAt(8, 0);
-        System.out.println(list);
+//        list.insertAt(8, 0);
 
+        list.delete(1);
+
+        System.out.println(list);
     }
 }
